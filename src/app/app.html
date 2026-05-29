@@ -7,19 +7,19 @@
     </div>
 
     <nav class="nav-menu">
-      <a routerLink="/home" routerLinkActive="active">Inicio</a>
+      <a routerLink="/juegos" routerLinkActive="active">Juegos</a>
       <a routerLink="/quien-soy" routerLinkActive="active">Quién Soy</a>
       <a routerLink="/resultados" routerLinkActive="active">Resultados</a>
       <a routerLink="/encuesta" routerLinkActive="active">Encuesta</a>
       @if (esAdmin()) {
-      <a routerLink="/resultado-encuestas" routerLinkActive="active">Admin</a>
+  <a routerLink="/resultado-encuestas" class="nav-admin-badge">Admin</a>
 }
     </nav>
 
     <div class="nav-auth">
   @if (usuario()) {
     <div class="user-logged-info">
-      <span class="nav-icon">👤</span> 
+      <div class="nav-avatar">{{ (usuario()?.nombre?.[0] ?? '' + usuario()?.apellido?.[0]) | uppercase }}</div>
       <span class="user-name">Hola, {{usuario()?.nombre}} {{usuario()?.apellido}}!</span>
       <button (click)="onCerrarSesion()" class="btn-logout"
       routerLink="/home"

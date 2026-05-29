@@ -1,0 +1,122 @@
+<section class="juegos-section">
+
+  <div class="juegos-header">
+    <div class="juegos-header-label">Catálogo</div>
+    <h2>Juegos</h2>
+    @if (!authService.estaLogueado) {
+      <p>Iniciá sesión para desbloquear todos los juegos</p>
+    }
+  </div>
+
+  <div class="juegos-list">
+
+    <!-- Ahorcado -->
+    <div class="juego-row">
+      <div class="juego-thumb" style="background-image: url('https://laruletagiratoria.com/wp-content/uploads/ahorcado.jpg')">
+        <div class="juego-thumb-overlay"></div>
+        <span class="juego-tag">Psicología</span>
+      </div>
+      <div class="juego-body">
+        <span class="juego-num">01</span>
+        <h3>Ahorcado</h3>
+        <p>Adiviná la palabra secreta antes de quedarte sin intentos.</p>
+      </div>
+      <div class="juego-action">
+        @if (!authService.estaLogueado) {
+          <span class="juego-lock-hint">Requiere sesión</span>
+        }
+        <button class="btn-jugar"
+          routerLink="/juego-ahorcado"
+          [disabled]="!authService.estaLogueado"
+          [title]="!authService.estaLogueado ? 'Iniciá sesión para jugar' : ''">
+          Jugar ahora
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path fill-rule="evenodd" d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286L7.28 19.99c-1.25.687-2.779-.217-2.779-1.643V5.653Z" clip-rule="evenodd"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mayor o Menor -->
+    <div class="juego-row">
+      <div class="juego-thumb" style="background-image: url('https://a.silvergames.com/j/b/higher-lower-card-game.jpg')">
+        <div class="juego-thumb-overlay"></div>
+        <span class="juego-tag">Lógica</span>
+      </div>
+      <div class="juego-body">
+        <span class="juego-num">02</span>
+        <h3>Mayor o Menor</h3>
+        <p>Adiviná si la próxima carta será mayor o menor que la actual.</p>
+      </div>
+      <div class="juego-action">
+        @if (!authService.estaLogueado) {
+          <span class="juego-lock-hint">Requiere sesión</span>
+        }
+        <button class="btn-jugar"
+          routerLink="/juego-mayor-menor"
+          [disabled]="!authService.estaLogueado"
+          [title]="!authService.estaLogueado ? 'Iniciá sesión para jugar' : ''">
+          Jugar ahora
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path fill-rule="evenodd" d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286L7.28 19.99c-1.25.687-2.779-.217-2.779-1.643V5.653Z" clip-rule="evenodd"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Preguntados (featured) -->
+    <div class="juego-row juego-row--featured">
+      <div class="juego-thumb" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSC6Cr_E7lb_t2WiYp1wwAjZ4BWifB7JKdRbQ&s')">
+        <div class="juego-thumb-overlay"></div>
+        <span class="juego-tag juego-tag--accent">Entretenimiento</span>
+      </div>
+      <div class="juego-body">
+        <span class="juego-num">03</span>
+        <h3>Preguntados</h3>
+        <p>Respondé preguntas de distintas categorías y demostrá tu conocimiento.</p>
+      </div>
+      <div class="juego-action">
+        @if (!authService.estaLogueado) {
+          <span class="juego-lock-hint">Requiere sesión</span>
+        }
+        <button class="btn-jugar"
+          routerLink="/juego-preguntados"
+          [disabled]="!authService.estaLogueado"
+          [title]="!authService.estaLogueado ? 'Iniciá sesión para jugar' : ''">
+          Jugar ahora
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path fill-rule="evenodd" d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286L7.28 19.99c-1.25.687-2.779-.217-2.779-1.643V5.653Z" clip-rule="evenodd"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Tetra -->
+    <div class="juego-row">
+      <div class="juego-thumb" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUx8HEf3Dx1be5AcwsxbDXYDNFIDYH4unOpQ&s')">
+        <div class="juego-thumb-overlay"></div>
+        <span class="juego-tag">Lógica</span>
+      </div>
+      <div class="juego-body">
+        <span class="juego-num">04</span>
+        <h3>Tetra</h3>
+        <p>Juego propio estilo Tetris. Encajá las piezas antes de que se acabe el espacio.</p>
+      </div>
+      <div class="juego-action">
+        @if (!authService.estaLogueado) {
+          <span class="juego-lock-hint">Requiere sesión</span>
+        }
+        <button class="btn-jugar"
+          routerLink="/juego-propio"
+          [disabled]="!authService.estaLogueado"
+          [title]="!authService.estaLogueado ? 'Iniciá sesión para jugar' : ''">
+          Jugar ahora
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path fill-rule="evenodd" d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286L7.28 19.99c-1.25.687-2.779-.217-2.779-1.643V5.653Z" clip-rule="evenodd"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+  </div>
+</section>
