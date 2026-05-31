@@ -4,7 +4,7 @@ import { AuthService } from '../../services/auth/auth';
 
 @Component({
   selector: 'app-juegos',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './juegos.html',
   styleUrl: './juegos.css',
 })
