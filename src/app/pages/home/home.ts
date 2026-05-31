@@ -6,7 +6,7 @@ import { ChatGlobalComponent } from '../chat-global/chat-global/chat-global';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterLink, ChatGlobalComponent],
+  imports: [ ChatGlobalComponent],
   templateUrl: './home.html',
   styleUrls: ['./home.css']
 })
